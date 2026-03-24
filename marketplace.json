@@ -1,0 +1,15 @@
+{
+  "name": "socialconductor-skills",
+  "description": "Control your SocialConductor AI comment automation bots from Claude — manage Facebook/Instagram, YouTube, and TikTok replies, leads, and settings without opening a browser.",
+  "owner": {
+    "name": "SocialConductor.AI",
+    "url": "https://socialconductor.ai"
+  },
+  "plugins": [
+    {
+      "name": "socialconductor-plugin",
+      "source": "./plugins/socialconductor-plugin",
+      "description": "Control all SocialConductor bots (Facebook/Instagram, YouTube, TikTok) from Claude — status, pause/resume, logs, leads, block list, and manual replies across all platforms."
+    }
+  ]
+}
