@@ -68,4 +68,4 @@ turn on viral intelligence
 ## Support
 
 - 📧 support@socialconductor.ai
-- 🌐 [socialconductor.ai](https://socialconductor.ai)
+- 🌐 [socialconductor.ai](https://www.socialconductor.ai)
