@@ -27,7 +27,7 @@ claude plugin install socialconductor-plugin@socialconductor-skills
 
 ## Getting Started
 
-1. **Sign up** at [socialconductor.ai](https://socialconductor.ai)
+1. **Sign up** at [socialconductor.ai](https://www.socialconductor.ai)
 2. **Get your API key(s)** from your account settings page on each platform
 3. **Set your environment variables:**
 
