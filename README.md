@@ -1,6 +1,6 @@
 # SocialConductor Skills for Claude
 
-Control your [SocialConductor.AI](https://socialconductor.ai) comment automation bots directly from Claude — no browser needed.
+Control your [SocialConductor.AI](https://www.socialconductor.ai) comment automation bots directly from Claude — no browser needed.
 
 ## What is SocialConductor?
 
