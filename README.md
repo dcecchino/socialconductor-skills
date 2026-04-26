@@ -97,4 +97,4 @@ open the viral vault
 ## Support
 
 - 📧 support@socialconductor.ai
-- 🌐 [socialconductor.ai](https://socialconductor.ai)
+- 🌐 [www.socialconductor.ai](https://www.socialconductor.ai)
