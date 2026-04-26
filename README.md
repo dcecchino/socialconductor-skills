@@ -50,7 +50,7 @@ connect my tiktok account
 New accounts get a **7-day free trial** with up to 30 AI replies per day.
 
 5. ** OpenClaw Enhancements
-
+```
 We've expanded our capabilities with new OpenClaw features, giving you deeper control over your AI responses, detailed analytics, and advanced scheduling directly through the API:
 
 Drafts & Approvals
@@ -69,7 +69,7 @@ Advanced Features
 GET /api/openclaw/friends — Access your friend and subscription lists.
 POST /api/openclaw/vacation — Configure and manage the vacation scheduler.
 GET /api/openclaw/viral_vault — Explore your top-performing, most viral comments.
-
+```
 ---
 
 ## Example Commands
