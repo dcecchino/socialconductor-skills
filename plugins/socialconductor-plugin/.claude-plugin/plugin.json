@@ -1,0 +1,8 @@
+{
+  "name": "socialconductor-plugin",
+  "version": "2.0.0",
+  "description": "Control all SocialConductor AI comment bots (Facebook/Instagram, YouTube, TikTok) from Claude.",
+  "skills": [
+    "./skills/socialconductor"
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "name": "socialconductor-skills",
+  "owner": {
+    "name": "Dave Cecchino",
+    "email": "support@socialconductor.ai"
+  },
+  "metadata": {
+    "description": "AI-powered social media comment automation for Facebook/Instagram, YouTube, and TikTok. Control your bots from Claude — pause, resume, logs, leads, analytics, drafts, AI teaching, and more.",
+    "version": "2.0.0"
+  },
+  "plugins": [
+    {
+      "name": "socialconductor-plugin",
+      "description": "Control all SocialConductor AI comment bots (Facebook/Instagram, YouTube, TikTok) from Claude — status, pause/resume, logs, leads, block list, manual replies, regenerate replies, drafts, approvals, analytics, AI teaching, prompt management, vacation mode, viral vault, and advanced settings.",
+      "source": "./plugins/socialconductor-plugin",
+      "strict": false,
+      "skills": [
+        "./plugins/socialconductor-plugin/skills/socialconductor"
+      ]
+    }
+  ]
+}

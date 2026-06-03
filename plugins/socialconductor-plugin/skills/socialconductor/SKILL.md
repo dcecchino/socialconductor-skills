@@ -2,22 +2,33 @@
 name: socialconductor
 description: >
   Manage your SocialConductor AI comment automation bots from any chat app.
-  Control Facebook/Instagram, YouTube, and TikTok — check status, pause or
-  resume replies, view logs, manage leads, block users, and post manual
-  replies — all without opening a browser. Facebook Pages link via a one-time
-  browser URL. YouTube links via Google OAuth. TikTok links via QR code.
-version: "1.4.0"
+  Control Facebook, Instagram, YouTube, and TikTok — check status, pause or
+  resume AI replies, view comment logs, manage leads, block users, post
+  manual replies, regenerate AI replies, view analytics, manage prompts,
+  control drafts and approvals, teach the AI, manage vacation mode, and
+  access the viral vault — all without opening a browser.
+summary: >
+  AI-powered social media comment automation for Facebook, Instagram, YouTube,
+  and TikTok. Control your bots via chat — pause, resume, view logs, manage
+  leads, block users, post manual replies, regenerate replies, analytics,
+  AI teaching, drafts, vacation mode, viral vault, and advanced settings.
+tags:
+  - social-media
+  - automation
+  - facebook
+  - instagram
+  - youtube
+  - tiktok
+  - comments
+  - ai-replies
+  - marketing
+  - saas
+version: "2.0.0"
 metadata:
   openclaw:
     emoji: "🤖"
     homepage: https://podium.socialconductor.ai
     always: false
-    requires:
-      env:
-        - SC_FB_API_KEY
-        - SC_YT_API_KEY
-        - SC_TIKTOK_API_KEY
-    primaryEnv: SC_FB_API_KEY
 ---
 
 # SocialConductor — Facebook, Instagram, YouTube & TikTok
@@ -27,7 +38,7 @@ Control your SocialConductor AI comment bots from WhatsApp, Slack, Telegram, or 
 ## Platforms
 
 | Platform | Status | Dashboard |
-|----------|--------|-----------|
+|----------|--------|-----------| 
 | 👥 Facebook / Instagram | ✅ Live | podium.socialconductor.ai |
 | 📺 YouTube | ✅ Live | studio.socialconductor.ai |
 | 🎵 TikTok | ✅ Live | violin.socialconductor.ai |
@@ -36,6 +47,67 @@ Each platform uses its own API key. You can connect one, two, or all three —
 commands are prefixed by platform so OpenClaw always knows which bot you mean.
 
 ---
+
+## Cross-Platform Core Features
+
+These commands work on all three platforms. Prefix with `facebook`, `youtube`, or `tiktok`.
+
+### Drafts & Approvals
+
+| Say this | What happens |
+|----------|-------------|
+| show my [platform] pending drafts | View pending AI replies awaiting approval |
+| approve all pending [platform] drafts | Bulk approve all pending AI replies |
+
+### Analytics & Insights
+
+| Say this | What happens |
+|----------|-------------|
+| show my [platform] daily analytics | Daily stats, reply counts, trends |
+| show [platform] performance insights | Gemini-powered page performance summary |
+| show [platform] enhanced analytics | Deep engagement and quality metrics |
+| show [platform] sentiment trend | Daily sentiment breakdown over last 30 days |
+| show [platform] ab stats | A/B prompt variant performance comparison |
+| show commenter profile for @username on [platform] | Full 90-day history for a commenter |
+| show comment detail for [comment_id] on [platform] | Full context, vibe, gate details for a comment |
+| show [platform] ai insights | AI-generated performance insights via Gemini |
+
+### AI Teaching & Prompt Control
+
+| Say this | What happens |
+|----------|-------------|
+| show [platform] teaching examples | View star (good) and bad example lists |
+| add this comment to [platform] teaching examples | Add an example to train AI tone |
+| show [platform] prompt | View current A/B system prompts |
+| update [platform] prompt | Update system prompt A and/or B |
+| generate [platform] magic prompt | Auto-generate prompt from page profile via API |
+| show [platform] advanced settings | View all advanced AI configuration |
+| update [platform] advanced settings | Update one or more advanced settings |
+
+### Scheduling & Tools
+
+| Say this | What happens |
+|----------|-------------|
+| show my [platform] friends list | View friends / subscribed channels |
+| turn on [platform] vacation mode | Configure away mode scheduling |
+| open the [platform] viral vault | View top-performing viral comment examples |
+| register push token for [platform] | Register device for push notifications |
+| show [platform] skill manifest | View this platform's full API capability list |
+
+---
+
+## Facebook / Instagram — Account Requirements
+
+> ⚠️ **Facebook requires a Business or Professional Creator account.**
+> A personal Facebook profile will not work. Before connecting, make sure you have:
+>
+> - A **Facebook Page** (not a personal profile) set up at [business.facebook.com](https://business.facebook.com)
+> - Your Page linked to a **Business Manager** or configured as a **Professional Creator Page**
+> - Admin or Editor role on the Page
+>
+> Instagram automation is available if your Instagram account is connected to
+> your Facebook Page as a **Professional (Creator or Business) Instagram account**.
+> A standard personal Instagram account will not work.
 
 ## Facebook / Instagram — Setup (first time only)
 
@@ -69,6 +141,7 @@ After the trial, visit podium.socialconductor.ai/upgrade to subscribe.
 | show facebook skipped comments | Comments the bot filtered (gate skips) |
 | show my facebook leads | Lead-flagged comments (price, buy, how much…) |
 | reply to facebook comment abc123 saying Great question! | Posts manual reply |
+| regenerate facebook reply for comment abc123 | Re-runs AI on that comment with current settings |
 | block @username | Adds @username to block list |
 | unblock @username | Removes @username from block list |
 | show blocked facebook users | Lists all blocked accounts |
@@ -77,12 +150,39 @@ After the trial, visit podium.socialconductor.ai/upgrade to subscribe.
 | enable facebook bot | Turns on auto-reply |
 | disable facebook bot | Turns off auto-reply |
 | turn on viral intelligence | Enables Reaction-Weighted Intelligence |
+| show my facebook pages | All connected pages with status and plan |
 | connect my facebook page | Get a one-time browser link |
+
+## Facebook / Instagram — Reviews (FB only)
+
+| Say this | What happens |
+|----------|-------------|
+| show facebook reviews | Recent Google/FB business reviews |
+| show facebook review drafts | Pending AI-drafted review replies |
+| reply to review [id] saying [text] | Post or update a review reply |
+| generate reply for review [id] | AI-generates a review reply |
+| feedback on review reply [id] | Submit thumbs-up/down on an AI review reply |
+| show facebook reviews analytics | Review response rate and sentiment stats |
+| show facebook reviews settings | View review reply configuration |
+| update facebook reviews settings | Update review reply configuration |
+
+## Facebook / Instagram — Security
+
+| Say this | What happens |
+|----------|-------------|
+| show facebook security audits | Recent prompt-injection / system-leak attempts caught by filters |
 
 ## Facebook / Instagram — Webhook Base URL
 https://podium.socialconductor.ai/api/openclaw/
 
 ---
+
+## YouTube — Account Requirements
+
+> ⚠️ **YouTube requires an active YouTube channel.**
+> A Google account alone is not enough — you must have created a YouTube channel
+> at [youtube.com](https://youtube.com) before connecting. The channel can be
+> a standard creator channel; no special business setup is required.
 
 ## YouTube — Setup (first time only)
 
@@ -105,6 +205,7 @@ OpenClaw registers you and sends a browser link. Open it, sign in with Google
 | show youtube skipped comments | Comments the bot filtered |
 | show youtube leads | Lead-flagged comments |
 | reply to youtube comment abc123 saying Great question! | Posts manual reply |
+| regenerate youtube reply for comment abc123 | Re-runs AI on that comment with current settings |
 | show my youtube videos | Video polling status |
 | show stale youtube videos | Videos with no recent activity |
 | reactivate youtube video abc123 | Resumes polling that video |
@@ -115,11 +216,19 @@ OpenClaw registers you and sends a browser link. Open it, sign in with Google
 | fast youtube response mode | Sets delay to fast |
 | aggressive youtube response mode | Sets delay to aggressive |
 | conservative youtube response mode | Sets delay to conservative |
+| show youtube reviews settings | View YouTube community/reviews settings |
+| update youtube reviews settings | Update YouTube community/reviews settings |
 
 ## YouTube — Webhook Base URL
 https://studio.socialconductor.ai/api/openclaw/
 
 ---
+
+## TikTok — Account Requirements
+
+> ✅ **TikTok works with standard creator accounts.**
+> No business account or special setup is required — any normal TikTok creator
+> account can connect. Just make sure your account is active and can post/comment.
 
 ## TikTok — Setup (first time only)
 
@@ -152,6 +261,8 @@ Expired trial channels are automatically removed from polling.
 | show tiktok skipped comments | Comments the bot filtered |
 | show tiktok leads | Lead-flagged comments |
 | reply to tiktok comment abc123 saying Great video! | Posts manual reply via Playwright |
+| check tiktok reply status [job_id] | Poll status of an async Playwright reply job |
+| regenerate tiktok reply for comment abc123 | Re-runs AI on that comment with current settings |
 | block @username | Adds @username to block list |
 | unblock @username | Removes @username from block list |
 | show blocked tiktok users | Lists all blocked accounts |
@@ -172,12 +283,13 @@ https://violin.socialconductor.ai/api/openclaw/
 
 ---
 
-## Auth
+## Auth & Privacy
 
-Each platform issues its own Bearer token via `POST /api/openclaw/register`
-with `{"openclaw_user_id": "..."}`. Tokens are stored locally by OpenClaw and
-sent as `Authorization: Bearer <key>` on every call. Keys are SHA-256 hashed
-before server-side storage — the plaintext is never saved remotely.
+**API Keys:** The environment variables (`SC_FB_API_KEY`, `SC_YT_API_KEY`, `SC_TIKTOK_API_KEY`) are **SocialConductor-issued API keys** generated from your SocialConductor dashboard. They are *not* your native Meta, Google, or TikTok passwords or OAuth tokens. You only need to provide the keys for the specific platforms you wish to automate.
+
+**Registration & Data Privacy:** When you run a `connect` command, OpenClaw sends only a secure, anonymous identifier (`{"openclaw_user_id": "..."}`) to the SocialConductor API via `POST /api/openclaw/register` to generate your one-time browser link. **No chat history, personal data, or agent context is transmitted during this registration phase.**
+
+Tokens are stored locally by OpenClaw and sent as `Authorization: Bearer <key>` on every call. Keys are SHA-256 hashed before server-side storage — the plaintext is never saved remotely.
 
 | Platform | Register endpoint |
 |----------|-------------------|
@@ -187,7 +299,99 @@ before server-side storage — the plaintext is never saved remotely.
 
 ---
 
-## Error reference
+## Full API Route Reference
+
+All routes require `Authorization: Bearer <key>` except `/register`.
+
+### Core (all platforms)
+
+| Method | Route | Description |
+|--------|-------|-------------|
+| POST | /api/openclaw/register | Register OpenClaw user, get API key |
+| POST | /api/openclaw/link_token | Get one-time browser OAuth link |
+| GET | /api/openclaw/status | Bot status, plan, usage, recent replies |
+| POST | /api/openclaw/hold | Pause or resume AI replies |
+| GET | /api/openclaw/logs | Comment activity log |
+| POST | /api/openclaw/reply | Post a manual reply |
+| POST | /api/openclaw/regenerate | Regenerate AI reply for a comment |
+| GET | /api/openclaw/leads | Lead-flagged comments |
+| GET | /api/openclaw/videos | Video polling status |
+| POST | /api/openclaw/reactivate | Reactivate a stale video (YT/TT) |
+| GET | /api/openclaw/drafts | Pending draft replies |
+| POST | /api/openclaw/approve_bulk | Bulk approve drafts |
+| GET,POST | /api/openclaw/settings | Get/update bot settings |
+| GET,POST | /api/openclaw/live_settings | Get/update live-mode settings |
+| POST | /api/openclaw/register_push_token | Register device push notification token |
+| GET | /api/openclaw/skill_manifest | Platform API capability manifest |
+
+### Analytics
+
+| Method | Route | Description |
+|--------|-------|-------------|
+| GET | /api/openclaw/analytics | Daily stats and reply counts |
+| GET | /api/openclaw/analytics/enhanced | Deep engagement and quality metrics |
+| GET | /api/openclaw/insights | Gemini-powered performance summary |
+| GET | /api/openclaw/ai_insights | AI-generated page insights |
+| GET | /api/openclaw/ab_stats | A/B prompt variant performance |
+| GET | /api/openclaw/sentiment_trend | Daily sentiment breakdown |
+| GET | /api/openclaw/commenter_profile | 90-day profile for a specific commenter |
+| GET | /api/openclaw/comment_detail | Full context and gate info for a comment |
+
+### AI Teaching & Prompts
+
+| Method | Route | Description |
+|--------|-------|-------------|
+| GET | /api/openclaw/examples | Star and bad example lists |
+| POST | /api/openclaw/teach | Add a teaching example |
+| GET,POST | /api/openclaw/prompt | View/update A/B system prompts |
+| POST | /api/openclaw/magic_prompt | Auto-generate prompt from page profile |
+| GET,POST | /api/openclaw/advanced | View/update advanced AI settings |
+
+### Tools & Features
+
+| Method | Route | Description |
+|--------|-------|-------------|
+| GET | /api/openclaw/friends | Friends / subscribed channels list |
+| POST | /api/openclaw/vacation | Configure vacation/away mode |
+| GET | /api/openclaw/viral_vault | Top-performing viral comment examples |
+
+### Facebook / Instagram Only
+
+| Method | Route | Description |
+|--------|-------|-------------|
+| GET | /api/openclaw/pages | All connected pages with status and plan |
+| GET | /api/openclaw/blocked | Blocked user list |
+| POST | /api/openclaw/block | Block a user |
+| POST | /api/openclaw/unblock | Unblock a user |
+| GET | /api/openclaw/security_audits | Prompt-injection / system-leak audit log |
+| GET | /api/openclaw/reviews | Business reviews |
+| GET | /api/openclaw/reviews/drafts | Pending AI-drafted review replies |
+| POST,PUT,DELETE | /api/openclaw/reviews/\<id\>/reply | Post, update, or delete a review reply |
+| POST | /api/openclaw/reviews/\<id\>/generate | AI-generate a review reply |
+| POST | /api/openclaw/reviews/\<id\>/feedback | Thumbs-up/down on a review reply |
+| GET | /api/openclaw/reviews/analytics | Review response rate and sentiment |
+| GET,POST | /api/openclaw/reviews/settings | View/update review reply configuration |
+
+### TikTok Only
+
+| Method | Route | Description |
+|--------|-------|-------------|
+| GET | /api/openclaw/blocked | Blocked user list |
+| POST | /api/openclaw/block | Block a user |
+| POST | /api/openclaw/unblock | Unblock a user |
+| POST | /api/openclaw/qr_start_link | Start a TikTok QR login session |
+| GET | /api/openclaw/qr_poll_link | Poll QR login completion status |
+| GET | /api/openclaw/reply_status/\<job_id\> | Poll async Playwright reply job status |
+
+### YouTube Only
+
+| Method | Route | Description |
+|--------|-------|-------------|
+| GET,POST | /api/openclaw/reviews_settings | YouTube community/reviews settings |
+
+---
+
+## Error Reference
 
 | Error code | Meaning |
 |------------|---------|
@@ -200,9 +404,35 @@ before server-side storage — the plaintext is never saved remotely.
 
 ---
 
+## 📱 iOS App — SocialConductor for iPhone
+
+Manage your bots natively from your iPhone. The SocialConductor iOS app gives
+you a full mobile dashboard for all three platforms — no browser required.
+
+**Download:** [SocialConductor on the App Store](https://apps.apple.com/us/app/socialconductor/id6764723628)
+
+**Requirements:** iOS 15.1 or later · Free · 31.7 MB
+
+**What's in the app:**
+- Unified mobile dashboard for Facebook/Instagram, YouTube, and TikTok
+- Real-time comment logs, leads, and reply management
+- AI Insights and analytics with enhanced graphs
+- Chat history with context and reply viewer
+- Pull-to-refresh comment logs
+- Live streaming support for Facebook, YouTube, and TikTok
+- Push notifications for new comments and replies
+- Multiple themes: Glass, AMOLED, Dark Pro, and Slate Clean
+- Demo mode for evaluating features before connecting accounts
+
+The app and the OpenClaw chat interface share the same backend — changes made
+in one are immediately reflected in the other.
+
+---
+
 ## Support
 
 - Email: support@socialconductor.ai
+- iOS App: https://apps.apple.com/us/app/socialconductor/id6764723628
 - Facebook Dashboard: https://podium.socialconductor.ai
 - YouTube Dashboard: https://studio.socialconductor.ai
 - TikTok Dashboard: https://violin.socialconductor.ai

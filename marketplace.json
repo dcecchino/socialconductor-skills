@@ -1,15 +1,159 @@
 {
   "name": "socialconductor-skills",
-  "description": "Control your SocialConductor AI comment automation bots from Claude — manage Facebook/Instagram, YouTube, and TikTok replies, leads, and settings without opening a browser.",
+  "version": "2.0.0",
+  "description": "Control your SocialConductor AI comment automation bots from Claude — manage Facebook/Instagram, YouTube, and TikTok replies, leads, analytics, drafts, AI teaching, vacation mode, viral vault, and settings without opening a browser.",
   "owner": {
     "name": "SocialConductor.AI",
     "url": "https://socialconductor.ai"
   },
+  "homepage": "https://socialconductor.ai",
+  "repository": "https://github.com/dcecchino/socialconductor-skills",
+  "ios_app": "https://apps.apple.com/us/app/socialconductor/id6764723628",
+  "tags": [
+    "social-media",
+    "automation",
+    "facebook",
+    "instagram",
+    "youtube",
+    "tiktok",
+    "comments",
+    "ai-replies",
+    "marketing",
+    "saas"
+  ],
+  "platforms": [
+    {
+      "name": "Facebook / Instagram",
+      "status": "live",
+      "dashboard": "https://podium.socialconductor.ai",
+      "webhook_base": "https://podium.socialconductor.ai/api/openclaw/",
+      "env_var": "SC_FB_API_KEY"
+    },
+    {
+      "name": "YouTube",
+      "status": "live",
+      "dashboard": "https://studio.socialconductor.ai",
+      "webhook_base": "https://studio.socialconductor.ai/api/openclaw/",
+      "env_var": "SC_YT_API_KEY"
+    },
+    {
+      "name": "TikTok",
+      "status": "live",
+      "dashboard": "https://violin.socialconductor.ai",
+      "webhook_base": "https://violin.socialconductor.ai/api/openclaw/",
+      "env_var": "SC_TIKTOK_API_KEY"
+    }
+  ],
   "plugins": [
     {
       "name": "socialconductor-plugin",
       "source": "./plugins/socialconductor-plugin",
-      "description": "Control all SocialConductor bots (Facebook/Instagram, YouTube, TikTok) from Claude — status, pause/resume, logs, leads, block list, and manual replies across all platforms."
+      "description": "Control all SocialConductor bots (Facebook/Instagram, YouTube, TikTok) from Claude — status, pause/resume, logs, leads, block list, manual replies, regenerate replies, drafts, approvals, analytics, AI teaching, prompt management, vacation mode, viral vault, and advanced settings across all platforms."
     }
-  ]
+  ],
+  "env": {
+    "SC_FB_API_KEY": {
+      "description": "SocialConductor API key for Facebook / Instagram",
+      "required": false,
+      "platform": "facebook"
+    },
+    "SC_YT_API_KEY": {
+      "description": "SocialConductor API key for YouTube",
+      "required": false,
+      "platform": "youtube"
+    },
+    "SC_TIKTOK_API_KEY": {
+      "description": "SocialConductor API key for TikTok",
+      "required": false,
+      "platform": "tiktok"
+    }
+  },
+  "routes": {
+    "core": [
+      "POST /api/openclaw/register",
+      "POST /api/openclaw/link_token",
+      "GET  /api/openclaw/status",
+      "POST /api/openclaw/hold",
+      "GET  /api/openclaw/logs",
+      "POST /api/openclaw/reply",
+      "POST /api/openclaw/regenerate",
+      "GET  /api/openclaw/leads",
+      "GET  /api/openclaw/videos",
+      "POST /api/openclaw/reactivate",
+      "GET  /api/openclaw/drafts",
+      "POST /api/openclaw/approve_bulk",
+      "GET  /api/openclaw/settings",
+      "POST /api/openclaw/settings",
+      "GET  /api/openclaw/live_settings",
+      "POST /api/openclaw/live_settings",
+      "POST /api/openclaw/register_push_token",
+      "GET  /api/openclaw/skill_manifest"
+    ],
+    "analytics": [
+      "GET /api/openclaw/analytics",
+      "GET /api/openclaw/analytics/enhanced",
+      "GET /api/openclaw/insights",
+      "GET /api/openclaw/ai_insights",
+      "GET /api/openclaw/ab_stats",
+      "GET /api/openclaw/sentiment_trend",
+      "GET /api/openclaw/commenter_profile",
+      "GET /api/openclaw/comment_detail"
+    ],
+    "ai_teaching": [
+      "GET  /api/openclaw/examples",
+      "POST /api/openclaw/teach",
+      "GET  /api/openclaw/prompt",
+      "POST /api/openclaw/prompt",
+      "POST /api/openclaw/magic_prompt",
+      "GET  /api/openclaw/advanced",
+      "POST /api/openclaw/advanced"
+    ],
+    "tools": [
+      "GET  /api/openclaw/friends",
+      "POST /api/openclaw/vacation",
+      "GET  /api/openclaw/viral_vault"
+    ],
+    "facebook_only": [
+      "GET          /api/openclaw/pages",
+      "GET          /api/openclaw/blocked",
+      "POST         /api/openclaw/block",
+      "POST         /api/openclaw/unblock",
+      "GET          /api/openclaw/security_audits",
+      "GET          /api/openclaw/reviews",
+      "GET          /api/openclaw/reviews/drafts",
+      "POST         /api/openclaw/reviews/<id>/reply",
+      "PUT          /api/openclaw/reviews/<id>/reply",
+      "DELETE       /api/openclaw/reviews/<id>/reply",
+      "POST         /api/openclaw/reviews/<id>/generate",
+      "POST         /api/openclaw/reviews/<id>/feedback",
+      "GET          /api/openclaw/reviews/analytics",
+      "GET          /api/openclaw/reviews/settings",
+      "POST         /api/openclaw/reviews/settings"
+    ],
+    "tiktok_only": [
+      "GET  /api/openclaw/blocked",
+      "POST /api/openclaw/block",
+      "POST /api/openclaw/unblock",
+      "POST /api/openclaw/qr_start_link",
+      "GET  /api/openclaw/qr_poll_link",
+      "GET  /api/openclaw/reply_status/<job_id>"
+    ],
+    "youtube_only": [
+      "GET  /api/openclaw/reviews_settings",
+      "POST /api/openclaw/reviews_settings"
+    ]
+  },
+  "error_codes": {
+    "unauthorized": "API key missing or invalid",
+    "trial_expired": "7-day trial ended — upgrade at the platform /upgrade page",
+    "no_page": "Platform not linked — run the connect command",
+    "terms_required": "ToS not accepted — visit podium.socialconductor.ai/terms",
+    "rate_limited": "Platform rate-limited this channel — resumes automatically",
+    "reply_failed": "Reply attempt failed — check dashboard for details"
+  },
+  "support": {
+    "email": "support@socialconductor.ai",
+    "ios_app": "https://apps.apple.com/us/app/socialconductor/id6764723628",
+    "website": "https://socialconductor.ai"
+  }
 }
