@@ -1,6 +1,6 @@
 # SocialConductor Skills for Claude & OpenClaw
 
-Control your [SocialConductor.AI](https://socialconductor.ai) comment automation bots directly from Claude or any OpenClaw-connected chat app — no browser needed.
+Control your [SocialConductor.AI](https://socialconductor.ai) comment automation bots directly from Claude or any OpenClaw-connected chat app. After a one-time 30-second browser setup per platform, all bot control and reply posting runs fully server-side — no ongoing browser access needed.
 
 ## What is SocialConductor?
 
